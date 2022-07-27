@@ -31,8 +31,8 @@ struct HomeView: View {
                 .animation(
                     Animation
                         .easeInOut(duration: 4)
-                        .repeatForever(),
-                    value: isAnimating
+                        .repeatForever()
+                , value: isAnimating
                 )
             }
         //MARK: - Center
@@ -52,12 +52,13 @@ struct HomeView: View {
             
             Button(action:{
                 withAnimation {
+                    playSound(sound: "success", type: "m4a")
                     isOnboardingViewActive = true
                 }
             }) {
                 Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
                     .imageScale(.large)
-
+                
                 
         Text("Restart")
                     .font(.system(.title3, design: .rounded))
